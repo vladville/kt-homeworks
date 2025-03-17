@@ -1,7 +1,7 @@
 import kotlin.math.roundToInt
 
 fun main() {
-    val isRegular = false;
+    val isRegular = true;
     var amount = 15_000;
 
     if (amount > 10000) {
