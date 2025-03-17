@@ -1,6 +1,8 @@
 fun main() {
-    val likes = 57;
+    val likes = 10000;
     var declension = "";
-    if ( (likes%10) > 10 && (likes%10) < 20 || likes == 1 ) declension = "человеку" else declension = "людям";
+
+    if (likes % 10 == 1 && likes % 100 != 11) declension = "человеку"; else declension = "людям";
+
     println("Понравилось $likes $declension");
 }
