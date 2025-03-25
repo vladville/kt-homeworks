@@ -23,7 +23,7 @@ fun agoToText(seconds: Int): String {
 fun minutesToText(timeMinute: Int): String {
     return when (timeMinute) {
         1, 21, 31, 41, 51 -> "минуту"
-        in 2..4, 22, 32, 42, 52 -> "минуты"
+        in 2..4, in 22..24, in 32..34, in 42..44, in 52..54 -> "минуты"
         in 5..9, in 11..14, 25, 35, 45, 55 -> "минут"
         else -> "минут"
     }

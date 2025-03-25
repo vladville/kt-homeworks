@@ -1,5 +1,5 @@
 fun main() {
-    println(calculateCommission("Mastercard", 0, 70_000))
+    println(calculateCommission("Mastercard", 20_000, 70_000))
     println(calculateCommission("Visa", 0, 78_000))
 }
 
@@ -21,7 +21,7 @@ fun calculateCommission(cardType: String, prevTrans: Int = 0, curTrans: Int): In
         "Visa" -> if (curTrans * commissionSize < minCommission) minCommission else curTrans * commissionSize
         "Mastercard" -> {
             if (prevTrans > nonCommissionLimit) (curTrans * commissionSize) + additionTax
-            else if (curTrans > nonCommissionLimit) ((curTrans - nonCommissionLimit) * commissionSize) + additionTax
+            else if (curTrans + prevTrans > nonCommissionLimit) ((curTrans + prevTrans - nonCommissionLimit) * commissionSize) + additionTax
             else 0
         }
         else -> -1
