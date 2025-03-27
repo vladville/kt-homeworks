@@ -1,6 +1,7 @@
 fun main() {
     println(calculateCommission("Mastercard", 20_000, 70_000))
     println(calculateCommission("Visa", 0, 78_000))
+    println(calculateCommission("Мир", 0, 78_000))
 }
 
 fun calculateCommission(cardType: String, prevTrans: Int = 0, curTrans: Int): Int {
@@ -24,6 +25,7 @@ fun calculateCommission(cardType: String, prevTrans: Int = 0, curTrans: Int): In
             else if (curTrans + prevTrans > nonCommissionLimit) ((curTrans + prevTrans - nonCommissionLimit) * commissionSize) + additionTax
             else 0
         }
+        "Мир" -> 0
         else -> -1
     }
 
