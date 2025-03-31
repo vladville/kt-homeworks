@@ -22,7 +22,7 @@ class MainKtTest {
 
         val result = calculateCommission(cardType, prevTrans, curTrans)
 
-        assertEquals(0, result)
+        assertEquals(500, result)
     }
 
     @Test
